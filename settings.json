@@ -1,0 +1,19 @@
+const Discord = require('discord.js');
+const {token} = require('./token.json');
+const client = new Discord.Client();
+
+// Event when connected
+client.on('ready', () => {
+     console.log(`Logged in as ${client.user.tag}!`);
+});
+
+// The event when the Bot receives a message
+client.on('message', msg => {
+     // If the content of the message is'ping'
+     if (msg.content ==='ping') {
+         // Then the Bot responds with'Pong'
+         msg.reply('pong');
+     }
+});
+
+client.login(token);
